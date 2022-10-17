@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reactive Test</title>
+    
+</head>
+<body>
+    <h3>Sandbox to test reactivity in JavaScript</h3>
+    <div>
+        Section1
+        <span id="displaySection1"></span><hr>
+        Section2
+        <span id="displaySection2"></span><hr>
+        Section3
+        <span id="displaySection3"></span><hr>
+    </div>
+    <button onclick="addValue()">INCREASE</button>
+    <hr>
+    <h3>Reactive (Two-way-binding) input</h3>
+    <span id="inputDisplaySection"></span>
+    <input id="inputSection" type="text" onkeyup="myName.value = this.value">
+    
+</body>
+<script src="index.js"></script>
+</html>
