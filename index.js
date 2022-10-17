@@ -6,18 +6,21 @@ const reactive = (v) => {
         set value(v){
             this._value = v;
             for(let i = 0; i < this._el.length; i++)
-                this._el[i].textContent = this._value;
+                this._apply(this._el[i]);
         },
-        bind(el){
-            this._el.push(el);
-            //bind data according to element type.
+        _apply(el){
             switch(el.localName){
                 case "input":
                     el.value = this._value;
                     break;
                 default:
                     el.textContent = this._value;
-            }    
+            } 
+        },
+        bind(el){
+            this._el.push(el);
+            //bind data according to element type.
+            this._apply(el)
         }
     }
 }
