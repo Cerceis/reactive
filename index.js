@@ -17,7 +17,9 @@ const reactive = (v) => {
                     el.textContent = this._value;
             } 
         },
-        bind(el){
+        bind(query){
+            const el = document.querySelector(query);
+            if(!el) return;
             this._el.push(el);
             //bind data according to element type.
             this._apply(el)
@@ -29,13 +31,13 @@ const reactive = (v) => {
 const myValue = reactive(1);
 const myName = reactive("type something");
 
-myValue.bind(document.querySelector("#displaySection1"))
-myValue.bind(document.querySelector("#displaySection2"))
-myValue.bind(document.querySelector("#displaySection3"))
+myValue.bind("#displaySection1")
+myValue.bind("#displaySection2")
+myValue.bind("#displaySection3")
 
 
-myName.bind(document.querySelector("#inputDisplaySection"))
-myName.bind(document.querySelector("#inputSection"))
+myName.bind("#inputDisplaySection")
+myName.bind("#inputSection")
 
 // functions
 const addValue = () => {
